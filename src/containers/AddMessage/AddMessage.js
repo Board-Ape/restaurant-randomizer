@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './AddMessage.css';
 import { connect } from 'react-redux';
 import { addEventName } from '../../actions';
-import { getNearbyRestaurants } from '../../helper/apiCalls';
 
 class AddMessage extends Component {
   constructor() {
@@ -10,10 +9,6 @@ class AddMessage extends Component {
     this.state = {
       title: ''
     }
-  }
-
-  componentDidMount() {
-    getNearbyRestaurants()
   }
 
   handleChange = (event) => {
