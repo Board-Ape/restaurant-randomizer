@@ -1,30 +1,54 @@
 import React, { Component } from 'react';
 import './AddMessage.css';
+import { connect } from 'react-redux';
+import { addEventName } from '../../actions';
 
 class AddMessage extends Component {
   constructor() {
     super()
     this.state = {
-      name: ''
+      title: ''
     }
   }
 
   handleChange = (event) => {
-    this.setState({name: event.target.value})
+    this.setState({title: event.target.value})
+  }
+
+  submitEventName = (event) => {
+    event.preventDefault();
+    this.props.handleSubmit(this.state.title, this.props.eventName.length)
   }
 
   render() {
     return(
       <div className='add-message-container'>
         <h1>AddMessage!</h1>
-        <input type='text'
-                placeholder='Event Name'
-                value={this.state.name}
-                onChange={this.handleChange} />
-        <input type='submit' />
+        <form onSubmit={this.submitEventName}>
+          <input type='text'
+                  placeholder='Event Name'
+                  value={this.state.title}
+                  onChange={this.handleChange} />
+          <input type='submit' />
+        </form>
       </div>
     )
   }
 }
 
-export default AddMessage;
+const mapStateToProps = (state) => {
+  console.log('MSP', state);
+  return { eventName: state.eventName }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleSubmit: (title, id) => {
+      console.log('MDP',title, id);
+      dispatch(addEventName(title, id))
+    }
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddMessage);
