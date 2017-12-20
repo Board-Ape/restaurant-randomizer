@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AddMessage.css';
 
 class AddMessage extends Component {
   constructor() {
@@ -10,8 +11,8 @@ class AddMessage extends Component {
 
   render() {
     return(
-      <div>
-        AddMessage!
+      <div className='add-message-container'>
+        <h1>AddMessage!</h1>
       </div>
     )
   }
