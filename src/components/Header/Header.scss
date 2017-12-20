@@ -1,4 +1,8 @@
-.header-container {
+.header-container{
   display: flex;
-  font-size: 30px;
+  justify-content: space-around;
+  p{
+    font-size: 40px;
+    background-color: lightblue;
+  }
 }

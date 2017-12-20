@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
-class Header extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return(
-      <div className='header-container'>
-        Header!
-      </div>
-    )
-  };
-};
+const Header = () => {
+  return(
+    <header>
+      <nav>
+        <div className='header-container'>
+          <p><Link to='/'>Home</Link></p>
+          <p><Link to='/message'>Message</Link></p>
+          <p><Link to='/randomizer'>Randomizer</Link></p >
+        </div>
+      </nav>
+    </header>
+  )
+}
 
 export default Header;
