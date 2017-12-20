@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './AddMessage.css';
 import { connect } from 'react-redux';
 import { addEventName } from '../../actions';
+import { getNearbyRestaurants } from '../../helper/apiCalls';
 
 class AddMessage extends Component {
   constructor() {
@@ -9,6 +10,10 @@ class AddMessage extends Component {
     this.state = {
       title: ''
     }
+  }
+
+  componentDidMount() {
+    getNearbyRestaurants()
   }
 
   handleChange = (event) => {
@@ -37,14 +42,12 @@ class AddMessage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('MSP', state);
   return { eventName: state.eventName }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleSubmit: (title, id) => {
-      console.log('MDP',title, id);
       dispatch(addEventName(title, id))
     }
   }
