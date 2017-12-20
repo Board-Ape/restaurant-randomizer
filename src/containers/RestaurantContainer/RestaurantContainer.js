@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { getRestaurants } from '../../actions';
-import { makeRestaurantArray } from '../../actions';
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import { connect } from 'react-redux';
 
 class RestaurantContainer extends Component {
-  constructor() {
-    super();
-  }
 
   componentDidMount = async () => {
     const nearbyRestaurants = await getRestaurants();
@@ -23,7 +19,7 @@ class RestaurantContainer extends Component {
     })
     return(
       <div>
-        RestaurantContainer
+        <h2>RestaurantContainer</h2>
         {restaurantsCardsArray}
       </div>
     )
