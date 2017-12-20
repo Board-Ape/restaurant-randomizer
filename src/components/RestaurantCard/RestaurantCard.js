@@ -3,7 +3,7 @@ import React from 'react';
 const RestaurantCard = (props) => {
  return (
    <div>
-    RestaurantCard!
+    {props.title}!
    </div>
  )
 }

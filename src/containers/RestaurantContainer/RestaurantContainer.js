@@ -6,8 +6,7 @@ import { connect } from 'react-redux';
 
 class RestaurantContainer extends Component {
   constructor() {
-    super()
-    this.state = {};
+    super();
   }
 
   componentDidMount = async () => {
@@ -16,24 +15,31 @@ class RestaurantContainer extends Component {
   }
 
   render() {
+    const uniqueKey = Date.now()
+    const restaurantsArray = this.props.restaurantNames
+    const restaurantsCardsArray = restaurantsArray.map(restaurant => {
+      return (<RestaurantCard key={uniqueKey}
+                              title={restaurant} />)
+    })
     return(
       <div>
-        <RestaurantCard />
+        RestaurantContainer
+        {restaurantsCardsArray}
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (store) => {
   return {
-    restaurantName: state.restaurantName
+    restaurantNames: store.restaurantNames
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     storeRestaurants: (restaurants) => {
-      dispatch(makeRestaurantArray(...restaurants))
+      dispatch(getRestaurants(restaurants))
     }
   }
 }
