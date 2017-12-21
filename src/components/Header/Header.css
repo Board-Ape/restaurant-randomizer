@@ -1,6 +1,6 @@
 .header-container {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  background-color: black; }
   .header-container p {
-    font-size: 40px;
-    background-color: lightblue; }
+    font-size: 40px; }
