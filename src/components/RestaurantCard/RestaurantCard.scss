@@ -1,0 +1,21 @@
+.card-container {
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+  display: inline-block;
+  background-color: green;
+  width: 200px;
+  height: 300px;
+  padding: 30px;
+  margin: 10px;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.cards {
+  width: 200px;
+  height: 300px;
+  h3 {
+    font-size: 20px;
+  }
+}

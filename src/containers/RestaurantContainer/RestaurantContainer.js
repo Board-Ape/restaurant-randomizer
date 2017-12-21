@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getRestaurants } from '../../actions';
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import { connect } from 'react-redux';
+import './RestaurantContainer.css';
 
 class RestaurantContainer extends Component {
 
@@ -18,7 +19,7 @@ class RestaurantContainer extends Component {
                               title={restaurant} />)
     })
     return(
-      <div>
+      <div className='card-container-container'>
         <h2>RestaurantContainer</h2>
         {restaurantsCardsArray}
       </div>
