@@ -1,4 +1,4 @@
-import {getNearbyRestaurants} from '../helper/apiCalls';
+import { getNearbyRestaurants } from '../helper/apiCalls';
 
 export const addEventName = (name, id) => ({
   type: 'ADD_EVENT_NAME',
@@ -14,4 +14,14 @@ export const getRestaurants = () => async (dispatch) => {
 export const makeRestaurantArray = (restaurants) => ({
   type: 'MAKE_RESTAURANT_ARRAY',
   restaurants
+})
+
+// export const getLocation = () => async (dispatch) => {
+//   const currentLocation = await getCurrrentLocation();
+//   dispatch(displayLocation(getCurrrentLocation));
+// }
+
+export const displayLocation = (location) => ({
+  type: 'LOCATION_DISPLAY',
+  location
 })
