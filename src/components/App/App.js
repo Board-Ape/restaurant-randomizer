@@ -4,6 +4,7 @@ import './App.css';
 import Header from '../Header/Header';
 import AddMessage from '../../containers/AddMessage/AddMessage';
 import RestaurantContainer from '../../containers/RestaurantContainer/RestaurantContainer';
+import MapContainer from '../../containers/MapContainer/MapContainer';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <Route path="/" component={Header} />
           <Route exact path="/message" component={AddMessage} />
           <Route exact path="/randomizer" component={RestaurantContainer} />
+          <Route exact path="/map" component={MapContainer} />
         </div>
       </div>
     );

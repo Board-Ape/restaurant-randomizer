@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import GoogleMapReact from 'google-map-react';
+import GoogleMapReact from 'google-maps-react';
 import {connect} from 'react-redux';
 
 export class MapContainer extends Component {
@@ -13,7 +13,7 @@ export class MapContainer extends Component {
         <div className='google-map'>
           <GoogleMapReact
             defaultCenter={{lat: this.props.locatin[0].lat, lng: this.props.location[0].lng}}
-            defaultZoom={10}
+            defaultZoom={10}>
           </GoogleMapReact>
         </div>
       )
@@ -23,8 +23,8 @@ export class MapContainer extends Component {
 
 export const mapStateToProps = (state) => {
  return{
-   location: store.location
+   location: state.location
  }
 }
 
-export default connect(mapStateToProps, null)(MapLocation)
+export default connect(mapStateToProps, null)(MapContainer)
