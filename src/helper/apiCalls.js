@@ -16,4 +16,4 @@ export const getNearbyRestaurants = async () => {
   } catch (type) {
     return Error('Fetch Failed');
   }
-};
+}; 

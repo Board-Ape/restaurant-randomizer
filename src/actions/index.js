@@ -16,12 +16,28 @@ export const makeRestaurantArray = (restaurants) => ({
   restaurants
 })
 
-// export const getLocation = () => async (dispatch) => {
-//   const currentLocation = await getCurrrentLocation();
-//   dispatch(displayLocation(getCurrrentLocation));
-// }
-
 export const displayLocation = (location) => ({
   type: 'LOCATION_DISPLAY',
   location
 })
+
+export const getLocation = () => {
+  const geolocation = navigator.geolocation;
+
+  const location = new Promise((resolve, reject) => {
+    if (!geolocation) {
+      reject(new Error('Not Supported'));
+    }
+
+    geolocation.getCurrentPosition((position) => {
+      resolve(position);
+    }, () => {
+      reject (new Error('Permission denied'));
+    });
+  });
+
+  return {
+    type: "GET_LOCATION",
+    location
+  }
+};
