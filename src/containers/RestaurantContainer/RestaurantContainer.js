@@ -24,7 +24,6 @@ class RestaurantContainer extends Component {
 
   render() {
     const uniqueKey = Date.now();
-    console.log(this.props.location.map(thisHere => thisHere));
     const restaurantsArray = this.props.restaurantNames;
     const restaurantsCardsArray = restaurantsArray.map(restaurant => {
       return (<RestaurantCard key={uniqueKey}
