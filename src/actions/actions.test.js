@@ -1,14 +1,37 @@
 import * as actions from './index.js';
 
-describe('actions', () => {
-  it('should create an action to add an event name', () => {
-    const name = 'Sam'
-    const id = '123'
-    const expectedAction = {
-      type: types.ADD_EVENT_NAME,
+describe('action', () => {
+
+  it('should create an action when adding an event', () => {
+    const name = ['string', 'problems']
+    const id = '098'
+    const expected = {
+      type: 'ADD_EVENT_NAME',
       name,
       id
-    }
-    expect(actions.addEventName(name)).toEqual(expectedAction)
-  })
-})
+    };
+
+    expect(actions.addEventName(name, id)).toEqual(expected)
+  });
+
+  it('should create an action when making a restaurant array', () => {
+    const restaurants = ['Traps', 'Biceps', 'Quads']
+    const expected = {
+      type: 'MAKE_RESTAURANT_ARRAY',
+      restaurants
+    };
+
+    expect(actions.makeRestaurantArray(restaurants)).toEqual(expected)
+  });
+
+  it('should create an action when location is fetched', () => {
+    const location = ['94, 100']
+    const expected ={
+      type: 'GET_LOCATION',
+      location
+    };
+
+    expect(actions.locationCoordinates(location)).toEqual(expected)
+  });
+  
+});
