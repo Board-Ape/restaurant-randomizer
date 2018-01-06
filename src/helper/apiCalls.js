@@ -34,34 +34,4 @@ export const postCurrentLocation = async (locationObject) => {
   } catch (type) {
     return Error('Fetch Location Failed')
   }
-}
-
-// export const getCurrentCoords = async () => {
-//   try {
-//     const geolocation = navigator.geolocation.getCurrentPosition((position) => {
-//       console.log(position);
-//     });
-//   } catch (type) {
-//     return Error('Fetch Failed');
-//   }
-// }
-// export const getLocation = () => {
-//   const geolocation = navigator.geolocation;
-//
-//   const location = new Promise((resolve, reject) => {
-//     if (!geolocation) {
-//       reject(new Error('Not Supported'));
-//     }
-//
-//     geolocation.getCurrentPosition((position) => {
-//       resolve(position);
-//     }, () => {
-//       reject (new Error('Permission denied'));
-//     });
-//   });
-//
-//   return {
-//     type: "GET_LOCATION",
-//     location
-//   }
-// };
+};

@@ -19,11 +19,6 @@ class RestaurantContainer extends Component {
     this.props.storeLocation(currentLocation);
   }
 
-  // componentWillMount = async () => {
-  //   const location = await getLocation();
-  //   this.props.storeLocation(location);
-  // }
-
   render() {
     const uniqueKey = Date.now();
     const restaurantsArray = this.props.restaurantNames;
