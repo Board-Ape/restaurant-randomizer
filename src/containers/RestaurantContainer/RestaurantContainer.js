@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getRestaurants, getLocation } from '../../actions';
+import { getRestaurants, postLocation } from '../../actions';
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import { connect } from 'react-redux';
 import './RestaurantContainer.css';
@@ -13,13 +13,10 @@ class RestaurantContainer extends Component {
   }
 
   componentDidMount = async () => {
+    const currentLocation = await postLocation();
     const nearbyRestaurants = await getRestaurants();
     this.props.storeRestaurants(nearbyRestaurants);
-  }
-
-  componentWillMount = async () => {
-    const location = await getLocation();
-    this.props.storeLocation(location);
+    this.props.storeLocation(currentLocation);
   }
 
   render() {
@@ -28,8 +25,6 @@ class RestaurantContainer extends Component {
     const restaurantsCardsArray = restaurantsArray.map(restaurant => {
       return (<RestaurantCard key={uniqueKey}
                               title={restaurant} />);
-    const coordinates = this.props.location;
-
     })
     return(
       <div className='card-container-container'>
@@ -48,19 +43,13 @@ class RestaurantContainer extends Component {
 const mapStateToProps = (store) => {
   return {
     restaurantNames: store.restaurantNames,
-    location: store.location
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    storeLocation: (location) => {
-      dispatch(getLocation(location))
-    },
-    storeRestaurants: (restaurants) => {
-      dispatch(getRestaurants(restaurants))
-    }
-
+    storeRestaurants: (restaurants) => dispatch(getRestaurants(restaurants)),
+    storeLocation: (location) => dispatch(postLocation(location))
   }
 }
 

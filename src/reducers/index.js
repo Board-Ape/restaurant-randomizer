@@ -1,13 +1,12 @@
 import { combineReducers } from 'redux';
-import eventNameReducer from './eventNameReducer';
-import makeRestaurantsReducer from './makeRestaurantsReducer';
-import locationReducer from './locationReducer';
-
+import eventName from './event-reducer';
+import restaurantNames from './restaurant-reducer';
+import currentLocation from './location-reducer';
 
 const rootReducer = combineReducers({
-  eventName: eventNameReducer,
-  restaurantNames: makeRestaurantsReducer,
-  location: locationReducer
+  eventName,
+  restaurantNames,
+  currentLocation
 })
 
 export default rootReducer;

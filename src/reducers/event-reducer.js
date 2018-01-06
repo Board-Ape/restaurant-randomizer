@@ -1,4 +1,4 @@
-const eventNameReducer = (state=[], action) => {
+const eventName = (state=[], action) => {
   switch (action.type) {
     case "ADD_EVENT_NAME":
       return [...state, {name: action.name, id: action.id}]
@@ -6,4 +6,4 @@ const eventNameReducer = (state=[], action) => {
       return state
   }
 }
- export default eventNameReducer;
+ export default eventName;
