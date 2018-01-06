@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getRestaurants, getLocation } from '../../actions';
+import { getRestaurants } from '../../actions';
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import { connect } from 'react-redux';
 import './RestaurantContainer.css';
@@ -17,10 +17,10 @@ class RestaurantContainer extends Component {
     this.props.storeRestaurants(nearbyRestaurants);
   }
 
-  componentWillMount = async () => {
-    const location = await getLocation();
-    this.props.storeLocation(location);
-  }
+  // componentWillMount = async () => {
+  //   const location = await getLocation();
+  //   this.props.storeLocation(location);
+  // }
 
   render() {
     const uniqueKey = Date.now();
@@ -28,8 +28,6 @@ class RestaurantContainer extends Component {
     const restaurantsCardsArray = restaurantsArray.map(restaurant => {
       return (<RestaurantCard key={uniqueKey}
                               title={restaurant} />);
-    const coordinates = this.props.location;
-
     })
     return(
       <div className='card-container-container'>
@@ -54,9 +52,6 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    storeLocation: (location) => {
-      dispatch(getLocation(location))
-    },
     storeRestaurants: (restaurants) => {
       dispatch(getRestaurants(restaurants))
     }

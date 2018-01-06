@@ -1,35 +1,40 @@
-import { getNearbyRestaurants, getCurrentCoords } from '../helper/apiCalls';
+import { getNearbyRestaurants } from '../helper/apiCalls';
 
 export const addEventName = (name, id) => ({
   type: 'ADD_EVENT_NAME',
   name,
   id
-})
+});
+
+export const fetchCurrentLocation = (location) => ({
+  type: 'FETCH_LOCATION',
+  location
+});
 
 export const getRestaurants = () => async (dispatch) => {
   const nearbyRestaurants = await getNearbyRestaurants();
   dispatch(makeRestaurantArray(nearbyRestaurants));
-}
+};
 
 export const makeRestaurantArray = (restaurants) => ({
   type: 'MAKE_RESTAURANT_ARRAY',
   restaurants
-})
+});
 
 // export const displayLocation = (location) => ({
 //   type: 'LOCATION_DISPLAY',
 //   location
 // })
 
-export const getLocation = () => async (dispatch) => {
-  const currentLocation = await getCurrentCoords();
-  dispatch(locationCoordinates(currentLocation));
-}
+// export const getLocation = () => async (dispatch) => {
+//   const currentLocation = await getCurrentCoords();
+//   dispatch(locationCoordinates(currentLocation));
+// }
 
-export const locationCoordinates = (location) => ({
-  type: 'GET_LOCATION',
-  location
-})
+// export const locationCoordinates = (location) => ({
+//   type: 'GET_LOCATION',
+//   location
+// })
 
 // export const getLocation = () => {
 //   const geolocation = navigator.geolocation;
