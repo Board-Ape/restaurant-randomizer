@@ -1,10 +1,15 @@
-import { getNearbyRestaurants } from '../helper/apiCalls';
+import { getNearbyRestaurants, postCurrentLocation } from '../helper/apiCalls';
 
 export const addEventName = (name, id) => ({
   type: 'ADD_EVENT_NAME',
   name,
   id
 });
+
+export const postLocation = () => async (dispatch) => {
+  const currentLocation = await postCurrentLocation();
+  dispatch(fetchCurrentLocation(currentLocation));
+}
 
 export const fetchCurrentLocation = (location) => ({
   type: 'FETCH_LOCATION',

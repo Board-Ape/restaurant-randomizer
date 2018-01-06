@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getRestaurants } from '../../actions';
+import { getRestaurants, postLocation } from '../../actions';
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import { connect } from 'react-redux';
 import './RestaurantContainer.css';
@@ -13,6 +13,7 @@ class RestaurantContainer extends Component {
   }
 
   componentDidMount = async () => {
+    const currentLocation = await postLocation();
     const nearbyRestaurants = await getRestaurants();
     this.props.storeRestaurants(nearbyRestaurants);
   }
