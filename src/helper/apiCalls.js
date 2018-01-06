@@ -27,8 +27,10 @@ export const postCurrentLocation = (locationObject) => async (dispatch) => {
       'Content-Type': 'application/json'
     }
     })
-    const responseObject = await initialFetch.json()
-    const currentLocation = await console.log(responseObject);
+    const responseObject = await initialFetch.json();
+    const currentLocation = await responseObject.location;
+
+    return currentLocation;
   } catch (type) {
     return Error('Fetch Location Failed')
   }

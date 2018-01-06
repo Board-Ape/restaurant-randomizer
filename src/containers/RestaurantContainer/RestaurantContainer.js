@@ -16,6 +16,7 @@ class RestaurantContainer extends Component {
     const currentLocation = await postLocation();
     const nearbyRestaurants = await getRestaurants();
     this.props.storeRestaurants(nearbyRestaurants);
+    this.props.storeLocation(currentLocation);
   }
 
   // componentWillMount = async () => {
@@ -47,16 +48,13 @@ class RestaurantContainer extends Component {
 const mapStateToProps = (store) => {
   return {
     restaurantNames: store.restaurantNames,
-    location: store.location
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    storeRestaurants: (restaurants) => {
-      dispatch(getRestaurants(restaurants))
-    }
-
+    storeRestaurants: (restaurants) => dispatch(getRestaurants(restaurants)),
+    storeLocation: (location) => dispatch(postLocation(location))
   }
 }
 
