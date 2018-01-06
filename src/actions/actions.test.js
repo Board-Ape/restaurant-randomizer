@@ -14,6 +14,16 @@ describe('action', () => {
     expect(actions.addEventName(name, id)).toEqual(expected)
   });
 
+  it('should create an action when location is fetched', () => {
+    const location = ['94, 100']
+    const expected ={
+      type: 'FETCH_LOCATION_SUCCESS',
+      location
+    };
+
+    expect(actions.fetchLocationSuccess(location)).toEqual(expected)
+  });
+
   it('should create an action when making a restaurant array', () => {
     const restaurants = ['Traps', 'Biceps', 'Quads']
     const expected = {
@@ -24,14 +34,4 @@ describe('action', () => {
     expect(actions.makeRestaurantArray(restaurants)).toEqual(expected)
   });
 
-  it('should create an action when location is fetched', () => {
-    const location = ['94, 100']
-    const expected ={
-      type: 'GET_LOCATION',
-      location
-    };
-
-    expect(actions.locationCoordinates(location)).toEqual(expected)
-  });
-  
 });
