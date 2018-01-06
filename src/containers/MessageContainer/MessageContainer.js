@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './AddMessage.css';
+import './MessageContainer.css';
 import { connect } from 'react-redux';
 import { addEventName } from '../../actions';
 import MessageCard from '../../components/MessageCard/MessageCard';
