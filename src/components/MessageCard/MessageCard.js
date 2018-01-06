@@ -4,7 +4,7 @@ import './MessageCard.scss';
 const MessageCard = (props) => {
   return (
     <div className='message-container'>
-      <h3>{props.eventName[0].name}</h3>
+      <div className='message-display'>{props.eventName[0].name}</div>
     </div>
   )
 }
