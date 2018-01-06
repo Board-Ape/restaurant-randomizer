@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
-  return(
+  return (
     <header>
       <nav>
         <div className='header-container'>
@@ -14,7 +14,7 @@ const Header = () => {
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

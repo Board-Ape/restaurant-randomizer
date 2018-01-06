@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 
 export const getNearbyRestaurants = async () => {
   try {
-    const headers = new Headers()
-    headers.append('user-key', API_KEY)
-    const init = {
+    const initialFetch = await fetch('https://developers.zomato.com/api/v2.1/search?lat=39.7392&lon=-104.9903&radius=8&sort=rating&order=desc', {
       method: 'GET',
-      headers
-    }
-    const initialFetch = await fetch('https://developers.zomato.com/api/v2.1/search?lat=39.7392&lon=-104.9903&radius=8&sort=rating&order=desc', init);
+      headers: {
+        'Content-Type': 'application/json',
+        'user-key': API_KEY
+      }
+    });
     const responseData = await initialFetch.json();
     const nearbyRestaurants = await responseData.restaurants.map((topRest) => topRest.restaurant.name);
 
@@ -27,21 +27,21 @@ export const postCurrentLocation = async (locationObject) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    })
+    });
     const responseObject = await initialFetch.json();
     const currentLocation = await responseObject.location;
 
     return currentLocation;
   } catch (type) {
-    return Error('Fetch Location Failed')
+    return Error('Fetch Location Failed');
   }
 };
 
 const mapStateToProps = (store) => {
   return {
     restaurantNames: store.restaurantNames,
-    currentLocation: store.currentLocation,
-  }
-}
+    currentLocation: store.currentLocation
+  };
+};
 
-export default connect(mapStateToProps, undefined)(getNearbyRestaurants)
+export default connect(mapStateToProps, undefined)(getNearbyRestaurants);

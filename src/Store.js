@@ -11,8 +11,8 @@ import geoMiddleware from 'redux-effects-geolocation';
 
 const devTools =
   window.__REDUX_DEVTOOLS_EXTENSION__
-  && window.__REDUX_DEVTOOLS_EXTENSION__()
-const middleware = applyMiddleware(geoMiddleware(), thunk, promise, logger)
+  && window.__REDUX_DEVTOOLS_EXTENSION__();
+const middleware = applyMiddleware(geoMiddleware(), thunk, promise, logger);
 
 const Store = createStore(
   rootReducer,
