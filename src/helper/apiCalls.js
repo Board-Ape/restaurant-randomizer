@@ -18,14 +18,14 @@ export const getNearbyRestaurants = async () => {
   }
 };
 
-export const postCurrentLocation = (locationObject) => async (dispatch) => {
+export const postCurrentLocation = async (locationObject) => {
   try {
     const initialFetch = await fetch('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDOxCWI5v69dw3ljge9fiJHdsC8BGrMbvE', {
-    method:'POST',
-    body: JSON.stringify(locationObject),
-    headers: {
-      'Content-Type': 'application/json'
-    }
+      method:'POST',
+      body: JSON.stringify(locationObject),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
     const responseObject = await initialFetch.json();
     const currentLocation = await responseObject.location;
