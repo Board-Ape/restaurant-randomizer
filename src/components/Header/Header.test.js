@@ -3,17 +3,18 @@ import { shallow } from 'enzyme';
 import Header from './Header';
 
 describe('Header', () => {
-  let renderedApp;
+  let renderedHeader;
 
   beforeEach(() => {
-    renderedApp = shallow(<Header />)
+    renderedHeader = shallow(<Header />)
   })
+  
   it('should exist', () => {
-    expect(renderedApp).toBeDefined()
+    expect(renderedHeader).toBeDefined()
   });
 
   it('should match the snapshot', () => {
-    expect(renderedApp).toMatchSnapshot();
+    expect(renderedHeader).toMatchSnapshot();
   });
 
 });
