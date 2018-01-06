@@ -1,4 +1,5 @@
 import { API_KEY } from '../settings.js';
+import { connect } from 'react-redux';
 
 export const getNearbyRestaurants = async () => {
   try {
@@ -35,3 +36,12 @@ export const postCurrentLocation = async (locationObject) => {
     return Error('Fetch Location Failed')
   }
 };
+
+const mapStateToProps = (store) => {
+  return {
+    restaurantNames: store.restaurantNames,
+    currentLocation: store.currentLocation,
+  }
+}
+
+export default connect(mapStateToProps, undefined)(getNearbyRestaurants)
