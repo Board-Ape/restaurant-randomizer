@@ -7,6 +7,6 @@ const rootReducer = combineReducers({
   eventName,
   restaurantNames,
   currentLocation
-})
+});
 
 export default rootReducer;

@@ -9,7 +9,7 @@ export const addEventName = (name, id) => ({
 export const postLocation = () => async (dispatch) => {
   const currentLocation = await postCurrentLocation();
   dispatch(fetchLocationSuccess(currentLocation));
-}
+};
 
 export const fetchLocationSuccess = (location) => ({
   type: 'FETCH_LOCATION_SUCCESS',

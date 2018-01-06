@@ -6,11 +6,11 @@ describe('Header', () => {
   let renderedHeader;
 
   beforeEach(() => {
-    renderedHeader = shallow(<Header />)
-  })
-  
+    renderedHeader = shallow(<Header />);
+  });
+
   it('should exist', () => {
-    expect(renderedHeader).toBeDefined()
+    expect(renderedHeader).toBeDefined();
   });
 
   it('should match the snapshot', () => {

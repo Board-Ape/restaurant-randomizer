@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { getRestaurants, postLocation } from '../../actions';
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
-import {getNearbyRestaurants} from '../../helper/apiCalls';
 import { connect } from 'react-redux';
 import './RestaurantContainer.css';
+import PropTypes from 'prop-types';
 
 class RestaurantContainer extends Component {
   constructor() {
     super();
     this.state = {
       coords: {latitude: 0, longitude: 0}
-    }
+    };
   }
 
   componentDidMount = async () => {
@@ -20,45 +20,52 @@ class RestaurantContainer extends Component {
     this.props.storeLocation(currentLocation);
   }
 
-  // updateCoordinates = () => {
-  //   const coordinatess = this.props.currentLocation
-  //   this.setState({coords: coordinatess})
-  // }
-
   render() {
     const uniqueKey = Date.now();
     const restaurantsArray = this.props.restaurantNames;
     const latitude = this.props.currentLocation.map(coords => coords.lat);
     const longitude = this.props.currentLocation.map(coords => coords.lng);
     const restaurantsCardsArray = restaurantsArray.map(restaurant => {
-      return (<RestaurantCard key={uniqueKey}
-                              title={restaurant} />);
-    })
-    return(
+      return (
+        <RestaurantCard
+          key={uniqueKey}
+          title={restaurant}
+        />
+      );
+    });
+    return (
       <div className='card-container-container'>
         <header><div className='location-title'>Location: {this.props.title}</div></header>
-          <div className='lat-long'>
-            <div>Latitude: <span>{latitude}</span></div>
-            <div>Longitude: <span>{longitude}</span></div>
-          </div>
+        <div className='lat-long'>
+          <div>Latitude: <span>{latitude}</span></div>
+          <div>Longitude: <span>{longitude}</span></div>
+        </div>
         {restaurantsCardsArray}
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = (store) => {
   return {
     restaurantNames: store.restaurantNames,
-    currentLocation: store.currentLocation,
-  }
-}
+    currentLocation: store.currentLocation
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     storeRestaurants: (restaurants) => dispatch(getRestaurants(restaurants)),
     storeLocation: (location) => dispatch(postLocation(location))
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(RestaurantContainer);
+
+RestaurantContainer.propTypes = {
+  storeRestaurants: PropTypes.func,
+  storeLocation: PropTypes.func,
+  restaurantNames: PropTypes.array,
+  currentLocation: PropTypes.array,
+  title: PropTypes.string
+};

@@ -6,7 +6,7 @@ describe('App', () => {
   let renderedApp;
 
   beforeEach(() => {
-    renderedApp = shallow(<App />)
+    renderedApp = shallow(<App />);
   });
 
   it('should exist', () => {
