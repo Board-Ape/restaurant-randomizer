@@ -29,13 +29,13 @@ class AddMessage extends Component {
     })
     return(
       <div className='add-message-container'>
-        <h1>AddMessage!</h1>
+        <h2 className='message-container-title'>AddMessage!</h2>
         <form onSubmit={this.submitEventName}>
-          <input type='text'
-                  placeholder='Event Name'
+          <input className='text-box' type='text'
+                  placeholder='Text Message'
                   value={this.state.eventTitle}
                   onChange={this.handleChange} />
-          <input type='submit' />
+          <input className='submit-button' type='submit' />
         </form>
         {messageCardArray}
       </div>

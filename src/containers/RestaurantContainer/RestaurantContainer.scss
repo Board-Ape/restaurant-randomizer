@@ -2,6 +2,13 @@
   background-color: black;
 }
 
+.location-title {
+  background-color: black;
+  color: white;
+  padding-top: 0px;
+  font-size: 22px;
+}
+
 h2 {
   display: flex;
   justify-content: space-around;
@@ -13,5 +20,5 @@ h2 {
 }
 
 .lat-long {
-  color: #460C7F;
+  color: white;
 }

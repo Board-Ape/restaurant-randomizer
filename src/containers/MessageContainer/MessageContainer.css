@@ -1,6 +1,20 @@
-h1 {
-  font-size: 40px;
+.message-container-title {
+  font-size: 26px;
   background-color: black;
-  color: #460C7F;
+  color: white;
   margin: 0;
+  padding-top: 20px;
   padding-bottom: 20px; }
+
+.text-box {
+  margin: 10px;
+  padding: 10px;
+  height: 50px;
+  width: 100px;
+  border-radius: 10px; }
+
+input::placeholder {
+  font-size: 16px; }
+
+.submit-button {
+  margin-top: 60px; }

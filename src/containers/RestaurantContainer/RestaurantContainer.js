@@ -36,12 +36,11 @@ class RestaurantContainer extends Component {
     })
     return(
       <div className='card-container-container'>
-        <header><h1>Location: {this.props.title}</h1></header>
+        <header><div className='location-title'>Location: {this.props.title}</div></header>
           <div className='lat-long'>
             <div>Latitude: <span>{latitude}</span></div>
             <div>Longitude: <span>{longitude}</span></div>
           </div>
-        <h2>RestaurantContainer</h2>
         {restaurantsCardsArray}
       </div>
     )
