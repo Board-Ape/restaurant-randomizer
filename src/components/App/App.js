@@ -14,7 +14,6 @@ class App extends Component {
           <Route path="/" component={Header} />
           <Route exact path="/message" component={MessageContainer} />
           <Route exact path="/randomizer" component={RestaurantContainer} />
-          <Route exact path="/map" component={MapContainer} />
         </div>
       </div>
     );

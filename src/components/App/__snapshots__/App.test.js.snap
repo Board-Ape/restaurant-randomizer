@@ -34,11 +34,6 @@ ShallowWrapper {
           exact={true}
           path="/randomizer"
         />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/map"
-        />
       </div>,
       "className": "App",
     },
@@ -62,11 +57,6 @@ ShallowWrapper {
             component={[Function]}
             exact={true}
             path="/randomizer"
-          />,
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/map"
           />,
         ],
         "className": "route-container",
@@ -111,19 +101,6 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "component": [Function],
-            "exact": true,
-            "path": "/map",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
       ],
       "type": "div",
     },
@@ -152,11 +129,6 @@ ShallowWrapper {
             exact={true}
             path="/randomizer"
           />
-          <Route
-            component={[Function]}
-            exact={true}
-            path="/map"
-          />
         </div>,
         "className": "App",
       },
@@ -180,11 +152,6 @@ ShallowWrapper {
               component={[Function]}
               exact={true}
               path="/randomizer"
-            />,
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/map"
             />,
           ],
           "className": "route-container",
@@ -224,19 +191,6 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/randomizer",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "exact": true,
-              "path": "/map",
             },
             "ref": null,
             "rendered": null,
