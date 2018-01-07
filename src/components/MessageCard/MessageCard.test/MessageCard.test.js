@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageCard from './MessageCard';
+import MessageCard from '../MessageCard';
 import { shallow } from 'enzyme';
 
 const mockData = {another: 'Day', some: 'Other'};
