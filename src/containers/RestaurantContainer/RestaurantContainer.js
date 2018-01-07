@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 import './RestaurantContainer.css';
 import PropTypes from 'prop-types';
 
-class RestaurantContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      coords: {latitude: 0, longitude: 0}
-    };
-  }
+export class RestaurantContainer extends Component {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     coords: {latitude: 0, longitude: 0}
+  //   };
+  // }
 
   componentDidMount = async () => {
     const currentLocation = await postLocation();
@@ -25,8 +25,7 @@ class RestaurantContainer extends Component {
     const latitude = this.props.currentLocation.map(coords => coords.lat);
     const longitude = this.props.currentLocation.map(coords => coords.lng);
     const restaurantsArray = this.props.restaurantNames;
-    const randomRestaurant = restaurantsArray[Math.floor(restaurantsArray.length * Math.random())];
-    console.log(randomRestaurant);
+    // const randomRestaurant = restaurantsArray[Math.floor(restaurantsArray.length * Math.random())];
     const restaurantsCardsArray = restaurantsArray.map(restaurant => {
       return (
         <RestaurantCard
@@ -48,21 +47,19 @@ class RestaurantContainer extends Component {
   }
 }
 
-const mapStateToProps = (store) => {
+export const mapStateToProps = (store) => {
   return {
     restaurantNames: store.restaurantNames,
     currentLocation: store.currentLocation
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     storeRestaurants: (restaurants) => dispatch(getRestaurants(restaurants)),
     storeLocation: (location) => dispatch(postLocation(location))
   };
 };
-
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantContainer);
 
 RestaurantContainer.propTypes = {
   storeRestaurants: PropTypes.func,
@@ -71,3 +68,5 @@ RestaurantContainer.propTypes = {
   currentLocation: PropTypes.array,
   title: PropTypes.string
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantContainer);

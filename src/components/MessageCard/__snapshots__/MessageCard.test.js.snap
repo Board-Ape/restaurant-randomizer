@@ -1,15 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RestaurantCard should match the snapshot 1`] = `
+exports[`MessageCard should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <RestaurantCard
+  Symbol(enzyme.__unrendered__): <MessageCard
     data={
       Object {
-        "sam": "Singer",
-        "status": "Sickly",
+        "another": "Day",
+        "some": "Other",
       }
+    }
+    eventName={
+      Array [
+        "hello",
+        "there",
+      ]
     }
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -25,11 +31,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div
-        className="cards"
-      >
-        <h3 />
-      </div>,
-      "className": "card-container",
+        className="message-display"
+      />,
+      "className": "message-container",
     },
     "ref": null,
     "rendered": Object {
@@ -37,21 +41,17 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h3 />,
-        "className": "cards",
+        "children": Array [
+          undefined,
+          undefined,
+        ],
+        "className": "message-display",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": undefined,
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "h3",
-      },
+      "rendered": Array [
+        undefined,
+        undefined,
+      ],
       "type": "div",
     },
     "type": "div",
@@ -63,11 +63,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="cards"
-        >
-          <h3 />
-        </div>,
-        "className": "card-container",
+          className="message-display"
+        />,
+        "className": "message-container",
       },
       "ref": null,
       "rendered": Object {
@@ -75,21 +73,17 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <h3 />,
-          "className": "cards",
+          "children": Array [
+            undefined,
+            undefined,
+          ],
+          "className": "message-display",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "h3",
-        },
+        "rendered": Array [
+          undefined,
+          undefined,
+        ],
         "type": "div",
       },
       "type": "div",
