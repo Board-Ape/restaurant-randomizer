@@ -1,19 +1,53 @@
-import eventNameReducer from '../event-reducer';
+import eventName from '../event-reducer';
+import restaurantNames from '../event-reducer';
+import currentLocation from '../event-reducer';
 import * as actions from '../../actions';
 
-describe('Reducers', () => {
-
-  it.skip('should have an initial state', () => {
+describe('currentLocation reducer tests', () => {
+  it('should return the initial store', () => {
     const expected = [];
 
-    expect(eventNameReducer(undefined, [])).toEqual(expected);
+    expect(currentLocation(undefined, {})).toEqual(expected);
   });
 
-  it.skip('should return a new state when an action is called', () => {
-    const mockObject = {name: 'Sam', id: 0};
-    const expected = {name: 'Sam', id: 0};
+  it('should return a new store with event data', () => {
+    const mockLocationData = [];
+    const expected = [...mockLocationData];
+    const action = actions.fetchLocationSuccess(mockLocationData);
 
-    expect(eventNameReducer([], actions.addEventName(mockObject))).toEqual(expected);
+    expect(currentLocation(undefined, action)).toEqual(expected);
+  });
+});
+
+describe('restaurantNames reducer tests', () => {
+  it('should return the initial store', () => {
+    const expected = [];
+
+    expect(restaurantNames(undefined, {})).toEqual(expected);
   });
 
+  it('should return a new store with restaurant data', () => {
+    const mockRestaurantData = [];
+    const expected = [...mockRestaurantData];
+    const action = actions.makeRestaurantArray(mockRestaurantData);
+
+    expect(restaurantNames(undefined, action)).toEqual(expected);
+  });
+});
+
+describe('eventName reducer tests', () => {
+  it('should return the initial store', () => {
+    const expected = [];
+
+    expect(eventName(undefined, {})).toEqual(expected);
+  });
+
+  it('should return a new store with event data', () => {
+    const mockEventData = [];
+    const mockID = '100';
+    const expected = [{"id": [], "name": "100"}];
+    const action = actions.addEventName(mockID, mockEventData);
+
+    expect(eventName(undefined, action)).toEqual(expected);
+  });
 });

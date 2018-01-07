@@ -1,9 +1,9 @@
-const eventName = (state=[], action) => {
+const eventName = (store=[], action) => {
   switch (action.type) {
   case "ADD_EVENT_NAME":
-    return [...state, {name: action.name, id: action.id}];
+    return [...store, {name: action.name, id: action.id}];
   default:
-    return state;
+    return store;
   }
 };
 

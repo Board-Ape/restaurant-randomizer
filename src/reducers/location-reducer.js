@@ -1,9 +1,9 @@
-const currentLocation = (state=[], action) => {
+const currentLocation = (store=[], action) => {
   switch (action.type) {
   case 'FETCH_LOCATION_SUCCESS':
-    return [...state, action.location];
+    return [...store, action.location];
   default:
-    return state;
+    return store;
   }
 };
 
