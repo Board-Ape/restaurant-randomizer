@@ -2,7 +2,7 @@ import React from 'react';
 import RestaurantCard from './RestaurantCard';
 import { shallow } from 'enzyme';
 
-const mockData = {sam: 'Singer', status: 'Ill'};
+const mockData = {sam: 'Singer', status: 'Sickly'};
 
 describe('RestaurantCard', () => {
   let renderedRestaurantContainer;
