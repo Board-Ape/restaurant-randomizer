@@ -22,9 +22,11 @@ class RestaurantContainer extends Component {
 
   render() {
     const uniqueKey = Date.now();
-    const restaurantsArray = this.props.restaurantNames;
     const latitude = this.props.currentLocation.map(coords => coords.lat);
     const longitude = this.props.currentLocation.map(coords => coords.lng);
+    const restaurantsArray = this.props.restaurantNames;
+    const randomRestaurant = restaurantsArray[Math.floor(restaurantsArray.length * Math.random())];
+    console.log(randomRestaurant);
     const restaurantsCardsArray = restaurantsArray.map(restaurant => {
       return (
         <RestaurantCard

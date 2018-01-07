@@ -5,7 +5,7 @@ import { addEventName } from '../../actions';
 import MessageCard from '../../components/MessageCard/MessageCard';
 import PropTypes from 'prop-types';
 
-class AddMessage extends Component {
+class MessageContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,7 +24,7 @@ class AddMessage extends Component {
 
   render() {
     const messagesArray = this.props.eventName;
-    const messageCardArray = messagesArray.map( messages => {
+    const messageCardArray = messagesArray.map( () => {
       return (<MessageCard
         key={this.props.eventName}
         eventName={this.props.eventName}
@@ -61,9 +61,9 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddMessage);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageContainer);
 
-AddMessage.propTypes = {
+MessageContainer.propTypes = {
   handleSubmit: PropTypes.func,
-  eventName: PropTypes.string
+  eventName: PropTypes.array
 };
