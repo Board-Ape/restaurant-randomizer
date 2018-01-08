@@ -17,7 +17,7 @@ export class RestaurantContainer extends Component {
 
   renderRestaurantCard = () => {
     const restaurantsArray = shuffle(this.props.restaurantNames);
-    const restaurantsCardsArray = restaurantsArray.map((restaurants, index) => {
+    const restaurantsCardsArray = restaurantsArray.splice(0, 3).map((restaurants, index) => {
       return (
         <RestaurantCard
           key={index}
