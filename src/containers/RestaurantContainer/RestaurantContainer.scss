@@ -1,5 +1,6 @@
 .card-container-container {
-  background-color:  #333333;
+  max-height: 100vh;
+  overflow: scroll;
 }
 
 .location-title {

@@ -7,3 +7,6 @@
 .nav-links {
   color: white;
   text-decoration-line: none; }
+
+.nav-links:hover {
+  text-decoration-line: underline; }
