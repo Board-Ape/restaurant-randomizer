@@ -1,9 +1,9 @@
-import { API_KEY } from '../settings.js';
+import { API_KEY, GOOGLE_API_KEY } from '../settings.js';
 import {cleanData} from './cleanData-Restaurant';
 
 export const getNearbyRestaurants = async (lat, lng) => {
   try {
-    const initialFetch = await fetch('https://developers.zomato.com/api/v2.1/search?lat=${lat}lon=${lng}', {
+    const initialFetch = await fetch(`https://developers.zomato.com/api/v2.1/search?lat=${lat}lon=${lng}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ export const getNearbyRestaurants = async (lat, lng) => {
 
 export const postCurrentLocation = async (locationObject) => {
   try {
-    const initialFetch = await fetch('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDOxCWI5v69dw3ljge9fiJHdsC8BGrMbvE', {
+    const initialFetch = await fetch(`https://www.googleapis.com/geolocation/v1/geolocate?key=${GOOGLE_API_KEY}`, {
       method:'POST',
       body: JSON.stringify(locationObject),
       headers: {
