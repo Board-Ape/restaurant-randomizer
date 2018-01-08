@@ -28,8 +28,16 @@ export class RestaurantContainer extends Component {
   }
 
   render() {
-    const latitude = this.props.currentLocation.map(coords => coords.lat);
-    const longitude = this.props.currentLocation.map(coords => coords.lng);
+    const latitude = this.props.currentLocation.map(coords => {
+      const coordsArray = coords.lat.toString();
+      const coordsString = coordsArray.split('').splice(0, coordsArray.length-11).join('');
+      return parseFloat(coordsString);
+    });
+    const longitude = this.props.currentLocation.map(coords => {
+      const coordsArray = coords.lng.toString();
+      const coordsString = coordsArray.split('').splice(0, coordsArray.length-11).join('');
+      return parseFloat(coordsString);
+    });
     return (
       <div className='card-container-container'>
         <div className='lat-long'>
