@@ -15,7 +15,10 @@
 .cards {
   width: 200px;
   height: 300px;
-  h3 {
-    font-size: 20px;
-  }
+  overflow:: scroll;
+}
+
+.address {
+  font-size: 12px;
+  color: white;
 }

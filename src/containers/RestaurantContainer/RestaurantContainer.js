@@ -6,12 +6,6 @@ import './RestaurantContainer.css';
 import PropTypes from 'prop-types';
 
 export class RestaurantContainer extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     coords: {latitude: 0, longitude: 0}
-  //   };
-  // }
 
   componentDidMount = async () => {
     const currentLocation = await postLocation();
@@ -20,20 +14,22 @@ export class RestaurantContainer extends Component {
     this.props.storeLocation(currentLocation);
   }
 
-  render() {
-    const uniqueKey = Date.now();
-    const latitude = this.props.currentLocation.map(coords => coords.lat);
-    const longitude = this.props.currentLocation.map(coords => coords.lng);
+  renderRestaurantCard = () => {
     const restaurantsArray = this.props.restaurantNames;
-    // const randomRestaurant = restaurantsArray[Math.floor(restaurantsArray.length * Math.random())];
-    const restaurantsCardsArray = restaurantsArray.map(restaurant => {
+    const restaurantsCardsArray = restaurantsArray.map((restaurants, index) => {
       return (
         <RestaurantCard
-          key={uniqueKey}
-          title={restaurant}
+          key={index}
+          restaurants={restaurants}
         />
       );
     });
+    return restaurantsCardsArray;
+  }
+
+  render() {
+    const latitude = this.props.currentLocation.map(coords => coords.lat);
+    const longitude = this.props.currentLocation.map(coords => coords.lng);
     return (
       <div className='card-container-container'>
         <header><div className='location-title'>Location: {this.props.title}</div></header>
@@ -41,7 +37,7 @@ export class RestaurantContainer extends Component {
           <div>Latitude: <span>{latitude}</span></div>
           <div>Longitude: <span>{longitude}</span></div>
         </div>
-        {restaurantsCardsArray}
+        {this.renderRestaurantCard()}
       </div>
     );
   }

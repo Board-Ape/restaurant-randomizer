@@ -13,6 +13,9 @@
 
 .cards {
   width: 200px;
-  height: 300px; }
-  .cards h3 {
-    font-size: 20px; }
+  height: 300px;
+  overflow: scroll; }
+
+.address {
+  font-size: 12px;
+  color: white; }

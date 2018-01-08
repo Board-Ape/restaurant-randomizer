@@ -22,7 +22,7 @@ class MessageContainer extends Component {
     this.props.handleSubmit(this.state.eventTitle, this.props.eventName.length);
   }
 
-  renderCards = () => {
+  renderMessageCards = () => {
     const messageCardArray = this.props.eventName.map( (message) => {
       return (<MessageCard
         key={message.index}
@@ -47,7 +47,7 @@ class MessageContainer extends Component {
           />
           <input className='submit-button' type='submit' />
         </form>
-        <div>{this.renderCards()}</div>
+        <div>{this.renderMessageCards()}</div>
       </div>
     );
   }

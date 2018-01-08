@@ -1,9 +1,9 @@
 import { API_KEY } from '../settings.js';
-import { connect } from 'react-redux';
+import {cleanData} from './cleanData-Restaurant';
 
-export const getNearbyRestaurants = async () => {
+export const getNearbyRestaurants = async (lat, lng) => {
   try {
-    const initialFetch = await fetch('https://developers.zomato.com/api/v2.1/search?lat=39.7392&lon=-104.9903&radius=8&sort=rating&order=desc', {
+    const initialFetch = await fetch('https://developers.zomato.com/api/v2.1/search?lat=${lat}lon=${lng}', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -11,9 +11,10 @@ export const getNearbyRestaurants = async () => {
       }
     });
     const responseData = await initialFetch.json();
-    const nearbyRestaurants = await responseData.restaurants.map((topRest) => topRest.restaurant.name);
+    const restaurantArray = await responseData.restaurants;
+    const cleanRestaurantObject = await cleanData(restaurantArray);
 
-    return nearbyRestaurants;
+    return cleanRestaurantObject;
   } catch (type) {
     return Error('Fetch Restaurants Failed');
   }
@@ -36,12 +37,3 @@ export const postCurrentLocation = async (locationObject) => {
     return Error('Fetch Location Failed');
   }
 };
-
-const mapStateToProps = (store) => {
-  return {
-    restaurantNames: store.restaurantNames,
-    currentLocation: store.currentLocation
-  };
-};
-
-export default connect(mapStateToProps, undefined)(getNearbyRestaurants);

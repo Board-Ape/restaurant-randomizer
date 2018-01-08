@@ -33,7 +33,7 @@ module.exports = {
     "max-len": ["warn", 180],
     "no-duplicate-imports": "error",
     "id-length": "error",
-    "id-blacklist": ["error", "data", "err", "e", "cb", "callback", "payload", "obj", "arr"],
+    "id-blacklist": ["error", "err", "e", "cb", "callback", "payload", "obj", "arr"],
     "max-depth": ["warn", 4]
   },
   "globals": {
