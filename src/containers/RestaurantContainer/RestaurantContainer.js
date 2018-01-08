@@ -32,10 +32,10 @@ export class RestaurantContainer extends Component {
     const longitude = this.props.currentLocation.map(coords => coords.lng);
     return (
       <div className='card-container-container'>
-        <header><div className='location-title'>Location: {this.props.title}</div></header>
         <div className='lat-long'>
-          <div>Latitude: <span>{latitude}</span></div>
-          <div>Longitude: <span>{longitude}</span></div>
+          <div className='location-title'>Location: {this.props.title}</div>
+          <div className='location-title'>Latitude: <span>{latitude}</span></div>
+          <div className='location-title'>Longitude: <span>{longitude}</span></div>
         </div>
         {this.renderRestaurantCard()}
       </div>
