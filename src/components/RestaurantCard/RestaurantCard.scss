@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-around;
   display: inline-block;
-  background-color: white;
+  background-color: #313131;
   width: 400px;
   height: 300px;
   padding: 30px;
@@ -11,23 +11,32 @@
   border-radius: 20px;
   border: 1px solid black;
   overflow:: scroll;
+  border: 2px white solid;
+}
+
+.card-container:hover {
+  border: 2px #ff9c6f solid;
+  cursor: pointer;
 }
 
 .restaurant-name {
-  font-size: 30px;
+  font-size: 40px;
+  margin-top: 0;
+  font-weight: 200;
+  color: #a2d3da;
 }
 
 .cuisine {
   font-size: 18px;
-  color: yellow;
+  color: #b1b1b1;
 }
 
 .rating {
   font-size: 18px;
-  color: red;
+  color: #ff9c6f;
 }
 
 .address {
   font-size: 18px;
-  color: white;
+  color: #b1b1b1;
 }
