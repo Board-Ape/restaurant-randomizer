@@ -27,7 +27,7 @@ describe('RestaurantContainer tests', () => {
   });
 
   it('should mount with the correct elements', () => {
-    const expected = ['hello', 'there', 'okay', 'maybe', 'good'].length;
+    const expected = ['hello', 'there', 'okay', 'maybe', 'good', 'lodash'].length;
 
     expect(restaurantContainer.find('div').length).toEqual(expected);
   });

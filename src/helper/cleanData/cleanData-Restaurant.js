@@ -5,8 +5,6 @@ export const cleanData = (restaurantArray) => {
       data: {
         Cuisines: restaurant.restaurant.cuisines,
         Address: restaurant.restaurant.location.address,
-        averagePrice: restaurant.restaurant.price_range,
-        costForTwo: restaurant.restaurant.average_cost_for_two,
         Rating: restaurant.restaurant.user_rating.aggregate_rating
       }
     };
