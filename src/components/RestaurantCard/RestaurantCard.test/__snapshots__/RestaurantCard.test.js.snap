@@ -5,10 +5,14 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <RestaurantCard
-    data={
+    restaurants={
       Object {
-        "sam": "Singer",
-        "status": "Sickly",
+        "data": Object {
+          "Address": "105 Stuart St, Mullumbimby",
+          "Cuisines": "Cafe, Coffee and Tea, Sandwich",
+          "Rating": "3.8",
+        },
+        "name": "Punch and Daisy",
       }
     }
   />,
@@ -27,7 +31,33 @@ ShallowWrapper {
       "children": <div
         className="cards"
       >
-        <h3 />
+        <h1
+          className="restaurant-name"
+        >
+          Punch and Daisy
+        </h1>
+        <h2
+          className="rating"
+        >
+          Rating: 
+          3.8
+        </h2>
+        <h2
+          className="cuisine"
+        >
+          Cuisine: 
+          Cafe, Coffee and Tea, Sandwich
+        </h2>
+        <h2
+          className="address"
+        >
+          Address:
+        </h2>
+        <h2
+          className="address"
+        >
+          105 Stuart St, Mullumbimby
+        </h2>
       </div>,
       "className": "card-container",
     },
@@ -37,21 +67,112 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h3 />,
+        "children": Array [
+          <h1
+            className="restaurant-name"
+          >
+            Punch and Daisy
+          </h1>,
+          <h2
+            className="rating"
+          >
+            Rating: 
+            3.8
+          </h2>,
+          <h2
+            className="cuisine"
+          >
+            Cuisine: 
+            Cafe, Coffee and Tea, Sandwich
+          </h2>,
+          <h2
+            className="address"
+          >
+            Address:
+          </h2>,
+          <h2
+            className="address"
+          >
+            105 Stuart St, Mullumbimby
+          </h2>,
+        ],
         "className": "cards",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": undefined,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Punch and Daisy",
+            "className": "restaurant-name",
+          },
+          "ref": null,
+          "rendered": "Punch and Daisy",
+          "type": "h1",
         },
-        "ref": null,
-        "rendered": null,
-        "type": "h3",
-      },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Rating: ",
+              "3.8",
+            ],
+            "className": "rating",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Rating: ",
+            "3.8",
+          ],
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Cuisine: ",
+              "Cafe, Coffee and Tea, Sandwich",
+            ],
+            "className": "cuisine",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Cuisine: ",
+            "Cafe, Coffee and Tea, Sandwich",
+          ],
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Address:",
+            "className": "address",
+          },
+          "ref": null,
+          "rendered": "Address:",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "105 Stuart St, Mullumbimby",
+            "className": "address",
+          },
+          "ref": null,
+          "rendered": "105 Stuart St, Mullumbimby",
+          "type": "h2",
+        },
+      ],
       "type": "div",
     },
     "type": "div",
@@ -65,7 +186,33 @@ ShallowWrapper {
         "children": <div
           className="cards"
         >
-          <h3 />
+          <h1
+            className="restaurant-name"
+          >
+            Punch and Daisy
+          </h1>
+          <h2
+            className="rating"
+          >
+            Rating: 
+            3.8
+          </h2>
+          <h2
+            className="cuisine"
+          >
+            Cuisine: 
+            Cafe, Coffee and Tea, Sandwich
+          </h2>
+          <h2
+            className="address"
+          >
+            Address:
+          </h2>
+          <h2
+            className="address"
+          >
+            105 Stuart St, Mullumbimby
+          </h2>
         </div>,
         "className": "card-container",
       },
@@ -75,21 +222,112 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <h3 />,
+          "children": Array [
+            <h1
+              className="restaurant-name"
+            >
+              Punch and Daisy
+            </h1>,
+            <h2
+              className="rating"
+            >
+              Rating: 
+              3.8
+            </h2>,
+            <h2
+              className="cuisine"
+            >
+              Cuisine: 
+              Cafe, Coffee and Tea, Sandwich
+            </h2>,
+            <h2
+              className="address"
+            >
+              Address:
+            </h2>,
+            <h2
+              className="address"
+            >
+              105 Stuart St, Mullumbimby
+            </h2>,
+          ],
           "className": "cards",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": undefined,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Punch and Daisy",
+              "className": "restaurant-name",
+            },
+            "ref": null,
+            "rendered": "Punch and Daisy",
+            "type": "h1",
           },
-          "ref": null,
-          "rendered": null,
-          "type": "h3",
-        },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Rating: ",
+                "3.8",
+              ],
+              "className": "rating",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Rating: ",
+              "3.8",
+            ],
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Cuisine: ",
+                "Cafe, Coffee and Tea, Sandwich",
+              ],
+              "className": "cuisine",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Cuisine: ",
+              "Cafe, Coffee and Tea, Sandwich",
+            ],
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Address:",
+              "className": "address",
+            },
+            "ref": null,
+            "rendered": "Address:",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "105 Stuart St, Mullumbimby",
+              "className": "address",
+            },
+            "ref": null,
+            "rendered": "105 Stuart St, Mullumbimby",
+            "type": "h2",
+          },
+        ],
         "type": "div",
       },
       "type": "div",

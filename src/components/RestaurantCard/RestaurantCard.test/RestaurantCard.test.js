@@ -2,13 +2,24 @@ import React from 'react';
 import RestaurantCard from '../RestaurantCard';
 import { shallow } from 'enzyme';
 
-const mockData = {sam: 'Singer', status: 'Sickly'};
+const mockData = {
+  name: "Punch and Daisy",
+  data: {
+    Cuisines: "Cafe, Coffee and Tea, Sandwich",
+    Address: "105 Stuart St, Mullumbimby",
+    Rating: "3.8"
+  }
+};
 
 describe('RestaurantCard', () => {
   let renderedRestaurantContainer;
 
   beforeEach(() => {
-    renderedRestaurantContainer = shallow(<RestaurantCard data={mockData}/>);
+    renderedRestaurantContainer = shallow(
+      <RestaurantCard
+        restaurants={mockData}
+      />
+    );
   });
 
   it('should exist', () => {
@@ -20,9 +31,9 @@ describe('RestaurantCard', () => {
   });
 
   it('should render cards', () => {
-    const expected = [mockData].length;
+    const expected = ['name', 'rating', 'cuisine', 'address'].length;
 
-    expect(renderedRestaurantContainer.find('h3').length).toEqual(expected);
+    expect(renderedRestaurantContainer.find('h2').length).toEqual(expected);
   });
 
 });
