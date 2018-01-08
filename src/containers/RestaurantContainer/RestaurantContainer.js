@@ -4,6 +4,7 @@ import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
 import { connect } from 'react-redux';
 import './RestaurantContainer.css';
 import PropTypes from 'prop-types';
+import shuffle from 'lodash/shuffle';
 
 export class RestaurantContainer extends Component {
 
@@ -15,8 +16,8 @@ export class RestaurantContainer extends Component {
   }
 
   renderRestaurantCard = () => {
-    const restaurantsArray = this.props.restaurantNames;
-    const restaurantsCardsArray = restaurantsArray.map((restaurants, index) => {
+    const restaurantsArray = shuffle(this.props.restaurantNames);
+    const restaurantsCardsArray = restaurantsArray.splice(0, 3).map((restaurants, index) => {
       return (
         <RestaurantCard
           key={index}
