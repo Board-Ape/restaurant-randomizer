@@ -3,26 +3,36 @@
   display: flex;
   justify-content: space-around;
   display: inline-block;
-  background-color: white;
+  background-color: #f7f7f7;
   width: 400px;
   height: 300px;
   padding: 30px;
   margin: 10px;
   border-radius: 20px;
   border: 1px solid black;
-  overflow: scroll; }
+  overflow: scroll;
+  border: 5px #313131 solid; }
+
+.card-container:hover {
+  border: 5px #ff9c6f solid;
+  cursor: pointer; }
 
 .restaurant-name {
-  font-size: 30px; }
+  font-family: 'Berkshire Swash', sans-serif;
+  font-size: 40px;
+  margin-top: 0;
+  color: #C10101; }
 
 .cuisine {
+  font-weight: 600;
   font-size: 18px;
-  color: yellow; }
+  color: #232323; }
 
 .rating {
   font-size: 18px;
-  color: red; }
+  color: #C10101; }
 
 .address {
+  font-weight: 500;
   font-size: 18px;
-  color: white; }
+  color: #232323; }

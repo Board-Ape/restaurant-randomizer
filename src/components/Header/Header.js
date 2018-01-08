@@ -7,10 +7,10 @@ const Header = () => {
     <header>
       <nav>
         <div className='header-container'>
-          <p><Link to='/'>Home</Link></p>
-          <p><Link to='/message'>Message</Link></p>
-          <p><Link to='/randomizer'>Randomizer</Link></p >
-          <p><Link to='/map'>MapLocation</Link></p >
+          <p><Link className='nav-links' to='/'>Home</Link></p>
+          <p><Link className='nav-links' to='/message'>Message</Link></p>
+          <p><Link className='nav-links' to='/randomizer'>Randomizer</Link></p >
+          <p><Link className='nav-links' to='/map'>MapLocation</Link></p >
         </div>
       </nav>
     </header>
