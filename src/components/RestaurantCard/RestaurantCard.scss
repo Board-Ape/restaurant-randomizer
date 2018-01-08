@@ -4,21 +4,30 @@
   justify-content: space-around;
   display: inline-block;
   background-color: white;
-  width: 200px;
+  width: 400px;
   height: 300px;
   padding: 30px;
   margin: 10px;
   border-radius: 20px;
   border: 1px solid black;
-}
-
-.cards {
-  width: 200px;
-  height: 300px;
   overflow:: scroll;
 }
 
+.restaurant-name {
+  font-size: 30px;
+}
+
+.cuisine {
+  font-size: 18px;
+  color: yellow;
+}
+
+.rating {
+  font-size: 18px;
+  color: red;
+}
+
 .address {
-  font-size: 12px;
+  font-size: 18px;
   color: white;
 }
