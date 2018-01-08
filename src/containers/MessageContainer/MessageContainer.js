@@ -22,14 +22,18 @@ class MessageContainer extends Component {
     this.props.handleSubmit(this.state.eventTitle, this.props.eventName.length);
   }
 
-  render() {
-    const messagesArray = this.props.eventName;
-    const messageCardArray = messagesArray.map( () => {
+  renderCards = () => {
+    const messageCardArray = this.props.eventName.map( (message) => {
       return (<MessageCard
-        key={this.props.eventName}
-        eventName={this.props.eventName}
+        key={message.index}
+        eventName={message.name}
       />);
     });
+    return messageCardArray;
+  }
+
+  render() {
+
     return (
       <div className='add-message-container'>
         <h2 className='message-container-title'>AddMessage!</h2>
@@ -43,7 +47,7 @@ class MessageContainer extends Component {
           />
           <input className='submit-button' type='submit' />
         </form>
-        {messageCardArray}
+        <div>{this.renderCards()}</div>
       </div>
     );
   }

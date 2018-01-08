@@ -4,7 +4,6 @@ import './App.css';
 import Header from '../Header/Header';
 import MessageContainer from '../../containers/MessageContainer/MessageContainer';
 import RestaurantContainer from '../../containers/RestaurantContainer/RestaurantContainer';
-import MapContainer from '../../containers/MapContainer/MapContainer';
 
 class App extends Component {
   render() {
