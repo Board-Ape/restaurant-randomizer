@@ -5,6 +5,7 @@ import { shallow } from 'enzyme';
 describe('RestaurantContainer tests', () => {
   let restaurantContainer;
   let mockProps;
+
   beforeEach(() => {
     mockProps = {
       restaurantNames: [],
@@ -18,11 +19,11 @@ describe('RestaurantContainer tests', () => {
   });
 
   it('should render correctly', () => {
-    expect(RestaurantContainer).toBeDefined();
+    expect(restaurantContainer).toBeDefined();
   });
 
   it('should match the snapshot', () => {
-    expect(RestaurantContainer).toMatchSnapshot();
+    expect(restaurantContainer).toMatchSnapshot();
   });
 
   it('should mount with the correct elements', () => {

@@ -1,3 +1,330 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RestaurantContainer tests should match the snapshot 1`] = `[Function]`;
+exports[`RestaurantContainer tests should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RestaurantContainer
+    currentLocation={Array []}
+    restaurantNames={Array []}
+    storeLocation={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            [Function],
+          ],
+        ],
+      }
+    }
+    storeRestaurants={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            [Function],
+          ],
+        ],
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <header>
+          <div
+            className="location-title"
+          >
+            Location: 
+          </div>
+        </header>,
+        <div
+          className="lat-long"
+        >
+          <div>
+            Latitude: 
+            <span />
+          </div>
+          <div>
+            Longitude: 
+            <span />
+          </div>
+        </div>,
+        Array [],
+      ],
+      "className": "card-container-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="location-title"
+          >
+            Location: 
+          </div>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Location: ",
+              undefined,
+            ],
+            "className": "location-title",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Location: ",
+            undefined,
+          ],
+          "type": "div",
+        },
+        "type": "header",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div>
+              Latitude: 
+              <span />
+            </div>,
+            <div>
+              Longitude: 
+              <span />
+            </div>,
+          ],
+          "className": "lat-long",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Latitude: ",
+                <span />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Latitude: ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [],
+                },
+                "ref": null,
+                "rendered": Array [],
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Longitude: ",
+                <span />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Longitude: ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [],
+                },
+                "ref": null,
+                "rendered": Array [],
+                "type": "span",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <header>
+            <div
+              className="location-title"
+            >
+              Location: 
+            </div>
+          </header>,
+          <div
+            className="lat-long"
+          >
+            <div>
+              Latitude: 
+              <span />
+            </div>
+            <div>
+              Longitude: 
+              <span />
+            </div>
+          </div>,
+          Array [],
+        ],
+        "className": "card-container-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="location-title"
+            >
+              Location: 
+            </div>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Location: ",
+                undefined,
+              ],
+              "className": "location-title",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Location: ",
+              undefined,
+            ],
+            "type": "div",
+          },
+          "type": "header",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                Latitude: 
+                <span />
+              </div>,
+              <div>
+                Longitude: 
+                <span />
+              </div>,
+            ],
+            "className": "lat-long",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Latitude: ",
+                  <span />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Latitude: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [],
+                  },
+                  "ref": null,
+                  "rendered": Array [],
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Longitude: ",
+                  <span />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Longitude: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [],
+                  },
+                  "ref": null,
+                  "rendered": Array [],
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

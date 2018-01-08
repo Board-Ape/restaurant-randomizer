@@ -5,7 +5,7 @@ import { addEventName } from '../../actions';
 import MessageCard from '../../components/MessageCard/MessageCard';
 import PropTypes from 'prop-types';
 
-class MessageContainer extends Component {
+export class MessageContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -53,15 +53,13 @@ class MessageContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return { eventName: state.eventName };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
-    handleSubmit: (eventTitle, id) => {
-      dispatch(addEventName(eventTitle, id));
-    }
+    handleSubmit: (eventTitle, id) => dispatch(addEventName(eventTitle, id))
   };
 };
 
