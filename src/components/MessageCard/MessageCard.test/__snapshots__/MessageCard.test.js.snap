@@ -32,7 +32,10 @@ ShallowWrapper {
     "props": Object {
       "children": <div
         className="message-display"
-      />,
+      >
+        hello
+        there
+      </div>,
       "className": "message-container",
     },
     "ref": null,
@@ -42,15 +45,15 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          undefined,
-          undefined,
+          "hello",
+          "there",
         ],
         "className": "message-display",
       },
       "ref": null,
       "rendered": Array [
-        undefined,
-        undefined,
+        "hello",
+        "there",
       ],
       "type": "div",
     },
@@ -64,7 +67,10 @@ ShallowWrapper {
       "props": Object {
         "children": <div
           className="message-display"
-        />,
+        >
+          hello
+          there
+        </div>,
         "className": "message-container",
       },
       "ref": null,
@@ -74,15 +80,15 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            undefined,
-            undefined,
+            "hello",
+            "there",
           ],
           "className": "message-display",
         },
         "ref": null,
         "rendered": Array [
-          undefined,
-          undefined,
+          "hello",
+          "there",
         ],
         "type": "div",
       },

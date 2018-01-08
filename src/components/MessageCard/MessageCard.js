@@ -1,11 +1,11 @@
 import React from 'react';
-import './MessageCard.scss';
+import './MessageCard.css';
 import PropTypes from 'prop-types';
 
 const MessageCard = (props) => {
   return (
     <div className='message-container'>
-      <div className='message-display'>{props.eventName.map(message => message.name)}</div>
+      <div className='message-display'>{props.eventName}</div>
     </div>
   );
 };

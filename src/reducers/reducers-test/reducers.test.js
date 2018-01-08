@@ -1,3 +1,4 @@
+/* eslint-disable */
 import eventName from '../event-reducer';
 import restaurantNames from '../event-reducer';
 import currentLocation from '../event-reducer';
