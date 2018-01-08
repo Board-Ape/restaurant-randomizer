@@ -4,15 +4,25 @@
   justify-content: space-around;
   display: inline-block;
   background-color: white;
-  width: 200px;
+  width: 400px;
   height: 300px;
   padding: 30px;
   margin: 10px;
   border-radius: 20px;
-  border: 1px solid black; }
+  border: 1px solid black;
+  overflow: scroll; }
 
-.cards {
-  width: 200px;
-  height: 300px; }
-  .cards h3 {
-    font-size: 20px; }
+.restaurant-name {
+  font-size: 30px; }
+
+.cuisine {
+  font-size: 18px;
+  color: yellow; }
+
+.rating {
+  font-size: 18px;
+  color: red; }
+
+.address {
+  font-size: 18px;
+  color: white; }

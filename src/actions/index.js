@@ -9,6 +9,7 @@ export const addEventName = (name, id) => ({
 export const postLocation = () => async (dispatch) => {
   const currentLocation = await postCurrentLocation();
   dispatch(fetchLocationSuccess(currentLocation));
+  dispatch(getRestaurants(currentLocation.lat, currentLocation.lng));
 };
 
 export const fetchLocationSuccess = (location) => ({
@@ -16,8 +17,8 @@ export const fetchLocationSuccess = (location) => ({
   location
 });
 
-export const getRestaurants = () => async (dispatch) => {
-  const nearbyRestaurants = await getNearbyRestaurants();
+export const getRestaurants = (lat, lng) => async (dispatch) => {
+  const nearbyRestaurants = await getNearbyRestaurants(lat, lng);
   dispatch(makeRestaurantArray(nearbyRestaurants));
 };
 
