@@ -1,5 +1,5 @@
 import React from 'react';
-import {RestaurantContainer, mapStateToProps, mapDispatchToProps } from './RestaurantContainer';
+import {RestaurantContainer, mapStateToProps, mapDispatchToProps } from '../RestaurantContainer';
 import { shallow } from 'enzyme';
 
 describe('RestaurantContainer tests', () => {

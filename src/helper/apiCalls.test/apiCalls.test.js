@@ -1,4 +1,4 @@
-import {getNearbyRestaurants, postCurrentLocation} from './apiCalls';
+import {getNearbyRestaurants, postCurrentLocation} from '../apiCalls';
 
 const mockData = {
   name: 'rest',
