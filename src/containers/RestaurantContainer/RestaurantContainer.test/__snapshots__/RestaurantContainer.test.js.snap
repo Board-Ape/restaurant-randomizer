@@ -45,7 +45,7 @@ ShallowWrapper {
           <div
             className="location-title"
           >
-            Location: 
+            Location
           </div>
           <div
             className="location-title"
@@ -60,7 +60,7 @@ ShallowWrapper {
             <span />
           </div>
         </div>,
-        Array [],
+        <div />,
       ],
       "className": "card-container-container",
     },
@@ -75,7 +75,7 @@ ShallowWrapper {
             <div
               className="location-title"
             >
-              Location: 
+              Location
             </div>,
             <div
               className="location-title"
@@ -99,17 +99,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                "Location: ",
-                undefined,
-              ],
+              "children": "Location",
               "className": "location-title",
             },
             "ref": null,
-            "rendered": Array [
-              "Location: ",
-              undefined,
-            ],
+            "rendered": "Location",
             "type": "div",
           },
           Object {
@@ -171,6 +165,17 @@ ShallowWrapper {
         ],
         "type": "div",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [],
+        },
+        "ref": null,
+        "rendered": Array [],
+        "type": "div",
+      },
     ],
     "type": "div",
   },
@@ -187,7 +192,7 @@ ShallowWrapper {
             <div
               className="location-title"
             >
-              Location: 
+              Location
             </div>
             <div
               className="location-title"
@@ -202,7 +207,7 @@ ShallowWrapper {
               <span />
             </div>
           </div>,
-          Array [],
+          <div />,
         ],
         "className": "card-container-container",
       },
@@ -217,7 +222,7 @@ ShallowWrapper {
               <div
                 className="location-title"
               >
-                Location: 
+                Location
               </div>,
               <div
                 className="location-title"
@@ -241,17 +246,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  "Location: ",
-                  undefined,
-                ],
+                "children": "Location",
                 "className": "location-title",
               },
               "ref": null,
-              "rendered": Array [
-                "Location: ",
-                undefined,
-              ],
+              "rendered": "Location",
               "type": "div",
             },
             Object {
@@ -311,6 +310,17 @@ ShallowWrapper {
               "type": "div",
             },
           ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [],
+          },
+          "ref": null,
+          "rendered": Array [],
           "type": "div",
         },
       ],

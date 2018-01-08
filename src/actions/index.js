@@ -1,4 +1,4 @@
-import { getNearbyRestaurants, postCurrentLocation } from '../helper/apiCalls';
+import { getNearbyRestaurants, postCurrentLocation } from '../helper/apiCalls/apiCalls';
 
 export const addEventName = (name, id) => ({
   type: 'ADD_EVENT_NAME',

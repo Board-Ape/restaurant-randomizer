@@ -1,5 +1,5 @@
-import { API_KEY, GOOGLE_API_KEY } from '../settings.js';
-import {cleanData} from './cleanData-Restaurant';
+import { API_KEY, GOOGLE_API_KEY } from '../../settings.js';
+import {cleanData} from '../cleanData-Restaurant';
 
 export const getNearbyRestaurants = async (lat, lng) => {
   try {
