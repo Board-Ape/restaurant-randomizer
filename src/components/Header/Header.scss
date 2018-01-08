@@ -1,8 +1,11 @@
 .header-container{
   display: flex;
   justify-content: space-around;
-  background-color: #F05D17; 
-  p{
-    font-size: 26px;
-  }
+  background-color: #FF7A3D;
+  font-size: 26px;
+}
+
+.nav-links {
+  color: white;
+  text-decoration-line: none;
 }
