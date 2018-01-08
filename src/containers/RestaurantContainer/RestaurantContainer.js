@@ -28,25 +28,23 @@ export class RestaurantContainer extends Component {
     return restaurantsCardsArray;
   }
 
+  latitude = () => {
+    return this.props.currentLocation.map(coords => coords.lat.toFixed(4));
+  }
+
+  longitude = () => {
+    return this.props.currentLocation.map(coords => coords.lng.toFixed(4));
+  }
+
   render() {
-    const latitude = this.props.currentLocation.map(coords => {
-      const coordsArray = coords.lat.toString();
-      const coordsString = coordsArray.split('').splice(0, coordsArray.length-11).join('');
-      return parseFloat(coordsString);
-    });
-    const longitude = this.props.currentLocation.map(coords => {
-      const coordsArray = coords.lng.toString();
-      const coordsString = coordsArray.split('').splice(0, coordsArray.length-11).join('');
-      return parseFloat(coordsString);
-    });
     return (
       <div className='card-container-container'>
         <div className='lat-long'>
-          <div className='location-title'>Location: {this.props.title}</div>
-          <div className='location-title'>Latitude: <span>{latitude}</span></div>
-          <div className='location-title'>Longitude: <span>{longitude}</span></div>
+          <div className='location-title'>Location</div>
+          <div className='location-title'>Latitude: <span>{this.latitude()}</span></div>
+          <div className='location-title'>Longitude: <span>{this.longitude()}</span></div>
         </div>
-        {this.renderRestaurantCard()}
+        <div>{this.renderRestaurantCard()}</div>
       </div>
     );
   }
