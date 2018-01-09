@@ -17,17 +17,20 @@ export class RestaurantCard extends Component {
     return results;
   }
 
-  handleFavorites = (restaurantCard) => {
+  handleFavorites = (restaurant) => {
+    // Object.assign(restaurants)
+    console.log(restaurant);
     this.setState({active: true});
-    if (!this.filterFavorites(restaurantCard.restaurants.name).length) {
-      return this.props.addFavorite(restaurantCard);
+    if (!this.filterFavorites(restaurant.restaurants.name).length) {
+      return this.props.addFavorite(restaurant);
     } else {
       this.setState({active: false});
-      return this.props.deleteFavorite(restaurantCard);
+      return this.props.deleteFavorite(restaurant);
     }
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className='card-container'>
         <div className='cards'>
@@ -67,7 +70,7 @@ RestaurantCard.propTypes = {
   Rating: PropTypes.string,
   Cuisines: PropTypes.string,
   Address: PropTypes.string,
-  favorites: PropTypes.object,
+  favorites: PropTypes.array,
   addFavorite: PropTypes.func,
   deleteFavorite: PropTypes.func
 };
