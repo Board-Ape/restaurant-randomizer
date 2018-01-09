@@ -19,7 +19,12 @@ export class RestaurantCard extends Component {
 
   handleFavorites = (restaurantCard) => {
     this.setState({active: true});
-
+    if (!this.filterFavorites(restaurantCard).length) {
+      return this.props.addFavorite(restaurantCard);
+    } else {
+      this.setState({active: false});
+      return this.props.deleteFavorite(restaurantCard);
+    }
   }
 
   render() {
@@ -28,7 +33,8 @@ export class RestaurantCard extends Component {
         <div className='cards'>
           <span
             className={this.state.active === false ? 'favorite' : 'favorite selected'}
-            onClick={() => this.handleFavorites}>
+            onClick={() => this.handleFavorites(this.props)}>
+            Favorite
           </span>
           <h2 className='rating'>Rating: {this.props.restaurants.data.Rating}</h2>
           <h1 className='restaurant-name'>{this.props.restaurants.name}</h1>
