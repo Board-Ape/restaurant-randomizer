@@ -26,3 +26,13 @@ export const makeRestaurantArray = (restaurants) => ({
   type: 'MAKE_RESTAURANT_ARRAY',
   restaurants
 });
+
+export const addFavorite = (favorite) => ({
+  type: "ADD_FAVORITE",
+  favorite
+});
+
+export const deleteFavorite = (favorite) => ({
+  type: "DELETE_FAVORITE",
+  favorite
+});
