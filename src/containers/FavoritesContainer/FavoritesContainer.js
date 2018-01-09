@@ -10,13 +10,11 @@ export class FavoritesContainer extends Component {
   }
 
   render() {
+    console.log(this.props.favorites);
     const favoriteCards = this.props.favorites.map((restaurants, index) => {
       return <RestaurantCard
         key={index}
-        name={restaurants.name}
-        rating={restaurants.data.Rating}
-        cuisines={restaurants.data.Cuisines}
-        addresss={restaurants.data.Address}
+        restaurants={restaurants}
       />;
     });
     return (
