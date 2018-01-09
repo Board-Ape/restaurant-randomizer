@@ -1,12 +1,13 @@
 const favorites = (store = [], action) => {
   switch (action.type) {
   case 'ADD_FAVORITE':
-  console.log(action.favorites);
+  console.log(action.favorites.restaurants);
     return [...store, action.favorites.restaurants];
   case 'DELETE_FAVORITE':
-    return [...store.filter(fav =>
-      fav.restaurants.name !==
-      action.favorites.restaurants.name)
+    return [...store.filter(fav => {
+      fav.name !==
+      action.favorites.restaurants.name;
+    })
     ];
   default:
     return store;

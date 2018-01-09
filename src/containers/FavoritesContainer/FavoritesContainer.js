@@ -8,12 +8,13 @@ export class FavoritesContainer extends Component {
   constructor() {
     super();
   }
+
   render() {
     const favoriteCards = this.props.favorites.map((restaurants, index) => {
       return <RestaurantCard
         key={index}
-        rating={restaurants.data.Rating}
         name={restaurants.name}
+        rating={restaurants.data.Rating}
         cuisines={restaurants.data.Cuisines}
         addresss={restaurants.data.Address}
       />;

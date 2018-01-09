@@ -13,7 +13,7 @@ export class RestaurantCard extends Component {
   }
 
   filterFavorites = (index) => {
-    let results = this.props.favorites.filter(favorites => favorites.restaurants.name === index);
+    let results = this.props.favorites.filter(favorites => favorites.name === index);
     return results;
   }
 
