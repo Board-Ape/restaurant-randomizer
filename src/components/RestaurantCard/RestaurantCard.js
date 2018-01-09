@@ -19,7 +19,7 @@ export class RestaurantCard extends Component {
 
   handleFavorites = (restaurantCard) => {
     this.setState({active: true});
-    if (!this.filterFavorites(restaurantCard).length) {
+    if (!this.filterFavorites(restaurantCard.restaurants.name).length) {
       return this.props.addFavorite(restaurantCard);
     } else {
       this.setState({active: false});
@@ -66,7 +66,10 @@ RestaurantCard.propTypes = {
   data: PropTypes.object,
   Rating: PropTypes.string,
   Cuisines: PropTypes.string,
-  Address: PropTypes.string
+  Address: PropTypes.string,
+  favorites: PropTypes.object,
+  addFavorite: PropTypes.func,
+  deleteFavorite: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RestaurantCard);

@@ -3,10 +3,11 @@ const favorites = (store = [], action) => {
   case 'ADD_FAVORITE':
     return [...store, action.favorites];
   case 'DELETE_FAVORITE':
-    return [...store.filter(favorite =>
-      favorite.restaurants.name !==
-      action.favorites.restaurants.name)
-    ];
+    // return [...store.filter(fav =>
+    //   fav.restaurants.name !==
+    //   action.favorites.restaurants.name)
+    // ];
+    return [];
   default:
     return store;
   }
