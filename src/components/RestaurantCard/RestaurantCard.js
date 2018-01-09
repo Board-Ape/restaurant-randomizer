@@ -1,22 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './RestaurantCard.css';
 import PropTypes from 'prop-types';
+import { addFavorite, deleteFavorite } from '../../actions';
+import { connect } from 'react-redux';
 
-const RestaurantCard = (props) => {
-  return (
-    <div className='card-container'>
-      <div className='cards'>
-        <h2 className='rating'>Rating: {props.restaurants.data.Rating}</h2>
-        <h1 className='restaurant-name'>{props.restaurants.name}</h1>
-        <h2 className='cuisine'>Cuisine: {props.restaurants.data.Cuisines}</h2>
-        <h2 className='address'>Address:</h2>
-        <h2 className='address'>{props.restaurants.data.Address}</h2>
+export class RestaurantCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: false
+    };
+  }
+
+  filterFavorites = (index) => {
+    let results = this.props.favorites.filter(favorites => favorites.restaurants.name === index);
+    return results;
+  }
+
+  handleFavorites = (restaurantCard) => {
+    this.setState({active: true});
+
+  }
+
+  render() {
+    return (
+      <div className='card-container'>
+        <div className='cards'>
+          <span
+            className={this.state.active === false ? 'favorite' : 'favorite selected'}
+            onClick={() => this.handleFavorites}>
+          </span>
+          <h2 className='rating'>Rating: {this.props.restaurants.data.Rating}</h2>
+          <h1 className='restaurant-name'>{this.props.restaurants.name}</h1>
+          <h2 className='cuisine'>Cuisine: {this.props.restaurants.data.Cuisines}</h2>
+          <h2 className='address'>Address:</h2>
+          <h2 className='address'>{this.props.restaurants.data.Address}</h2>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+}
+
+export const mapStateToProps = (store) => {
+  return {
+    favorites: store.favorites
+  };
 };
 
-export default RestaurantCard;
+export const mapDispatchToProps = (dispatch) => {
+  return {
+    addFavorite: (favorites) => dispatch(addFavorite(favorites)),
+    deleteFavorite: (favorites) => dispatch(deleteFavorite(favorites))
+  };
+};
 
 RestaurantCard.propTypes = {
   restaurants: PropTypes.object,
@@ -26,3 +62,5 @@ RestaurantCard.propTypes = {
   Cuisines: PropTypes.string,
   Address: PropTypes.string
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantCard);
