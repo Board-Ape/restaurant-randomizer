@@ -1,5 +1,5 @@
 import React from 'react';
-import RestaurantCard from '../RestaurantCard';
+import { RestaurantCard, mapStateToProps, mapDispatchToProps} from '../RestaurantCard';
 import { shallow } from 'enzyme';
 
 const mockData = {
@@ -31,9 +31,50 @@ describe('RestaurantCard', () => {
   });
 
   it('should render cards', () => {
-    const expected = ['name', 'rating', 'cuisine', 'address'].length;
+    expect(renderedRestaurantContainer.find('div').length).toEqual(2);
+    expect(renderedRestaurantContainer.find('h1').length).toEqual(1);
+    expect(renderedRestaurantContainer.find('h2').length).toEqual(4);
+    expect(renderedRestaurantContainer.find('span').length).toEqual(1);
+  });
 
-    expect(renderedRestaurantContainer.find('h2').length).toEqual(expected);
+  describe('mapStateToProps tests', () => {
+    let mockStore;
+    let results;
+
+    beforeEach(() => {
+      mockStore = {
+        favorites: ['Giordini', 'Masaki', 'Juniper'],
+        addFavorite: jest.fn(),
+        deleteFavorite: jest.fn()
+      };
+      results = mapStateToProps(mockStore);
+    });
+
+    it('should pull restaurants data from the store', () => {
+      expect(results.favorites).toEqual(mockStore.favorites);
+    });
+  });
+
+  describe('mapDispatchToProps tests', () => {
+    let mockDispatch;
+    let results;
+
+    beforeEach(() => {
+      mockDispatch = jest.fn();
+      results = mapDispatchToProps(mockDispatch);
+    });
+
+    it('should dispatch correctly when storing favorites', () => {
+      results.addFavorite();
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
+
+    it('should dispatch correctly when deleting favorites', () => {
+      results.deleteFavorite();
+
+      expect(mockDispatch).toHaveBeenCalled();
+    });
   });
 
 });

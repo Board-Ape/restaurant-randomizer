@@ -18,8 +18,6 @@ export class RestaurantCard extends Component {
   }
 
   handleFavorites = (restaurant) => {
-    // Object.assign(restaurants)
-    console.log(restaurant);
     this.setState({active: true});
     if (!this.filterFavorites(restaurant.restaurants.name).length) {
       return this.props.addFavorite(restaurant);
@@ -30,7 +28,6 @@ export class RestaurantCard extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className='card-container'>
         <div className='cards'>
