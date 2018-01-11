@@ -26,5 +26,5 @@ export const mapStateToProps = (store) => {
 export default connect(mapStateToProps, null)(FavoritesContainer);
 
 FavoritesContainer.propTypes = {
-  favorites: PropTypes.object
+  favorites: PropTypes.array
 };
