@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RestaurantCard should match the snapshot 1`] = `
+exports[`RestaurantCardContainer should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <RestaurantCard
+  Symbol(enzyme.__unrendered__): <RestaurantCardContainer
     restaurants={
       Object {
         "data": Object {
@@ -31,6 +31,12 @@ ShallowWrapper {
       "children": <div
         className="cards"
       >
+        <span
+          className="favorite"
+          onClick={[Function]}
+        >
+          Favorite
+        </span>
         <h2
           className="rating"
         >
@@ -68,6 +74,12 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <span
+            className="favorite"
+            onClick={[Function]}
+          >
+            Favorite
+          </span>,
           <h2
             className="rating"
           >
@@ -100,6 +112,19 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Favorite",
+            "className": "favorite",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Favorite",
+          "type": "span",
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -186,6 +211,12 @@ ShallowWrapper {
         "children": <div
           className="cards"
         >
+          <span
+            className="favorite"
+            onClick={[Function]}
+          >
+            Favorite
+          </span>
           <h2
             className="rating"
           >
@@ -223,6 +254,12 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
+            <span
+              className="favorite"
+              onClick={[Function]}
+            >
+              Favorite
+            </span>,
             <h2
               className="rating"
             >
@@ -255,6 +292,19 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Favorite",
+              "className": "favorite",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Favorite",
+            "type": "span",
+          },
           Object {
             "instance": null,
             "key": undefined,

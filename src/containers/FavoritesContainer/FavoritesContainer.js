@@ -1,28 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
-// import './FavoritesContainer.css';
+import RestaurantCardContainer from '../RestaurantCardContainer/RestaurantCardContainer';
 import PropTypes from 'prop-types';
 
-export class FavoritesContainer extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    const favoriteCards = this.props.favorites.map((restaurants, index) => {
-      return <RestaurantCard
-        key={index}
-        restaurants={restaurants}
-      />;
-    });
-    return (
-      <div>
-        <div className='favorite-cards'>{favoriteCards}</div>
-      </div>
-    );
-  }
-}
+export const FavoritesContainer = (props) => {
+  const favoriteCards = props.favorites.map((restaurants, index) => {
+    return <RestaurantCardContainer
+      key={index}
+      restaurants={restaurants}
+    />;
+  });
+  return (
+    <div>
+      <div className='favorite-cards'>{favoriteCards}</div>
+    </div>
+  );
+};
 
 export const mapStateToProps = (store) => {
   return {
@@ -31,3 +24,7 @@ export const mapStateToProps = (store) => {
 };
 
 export default connect(mapStateToProps, null)(FavoritesContainer);
+
+FavoritesContainer.propTypes = {
+  favorites: PropTypes.array
+};
