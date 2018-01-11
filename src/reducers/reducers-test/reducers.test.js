@@ -2,6 +2,7 @@
 import eventName from '../event-reducer';
 import restaurantNames from '../event-reducer';
 import currentLocation from '../event-reducer';
+import favorites from '../event-reducer';
 import * as actions from '../../actions';
 
 describe('currentLocation reducer tests', () => {
@@ -51,4 +52,29 @@ describe('eventName reducer tests', () => {
 
     expect(eventName(undefined, action)).toEqual(expected);
   });
+});
+
+describe('favorites reducer tests', () => {
+  it('should return the initial store', () => {
+    const expected = [];
+
+    expect(favorites(undefined, {})).toEqual(expected);
+  });
+
+  it('should return a new store with favorites data', () => {
+    const mockEventData = [];
+    const expected = mockEventData;
+    const action = actions.addFavorite(mockEventData);
+
+    expect(favorites(undefined, action)).toEqual(expected);
+  });
+
+  it('should delete and filter favorites', () => {
+    const mockEventData = [];
+    const expected = mockEventData;
+    const action = actions.deleteFavorite(mockEventData);
+
+    expect(favorites(undefined, action)).toEqual(expected);
+  });
+
 });
