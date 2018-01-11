@@ -34,6 +34,11 @@ ShallowWrapper {
           exact={true}
           path="/randomizer"
         />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/favorites"
+        />
       </div>,
       "className": "App",
     },
@@ -57,6 +62,11 @@ ShallowWrapper {
             component={[Function]}
             exact={true}
             path="/randomizer"
+          />,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/favorites"
           />,
         ],
         "className": "route-container",
@@ -101,6 +111,19 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/favorites",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": "div",
     },
@@ -129,6 +152,11 @@ ShallowWrapper {
             exact={true}
             path="/randomizer"
           />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/favorites"
+          />
         </div>,
         "className": "App",
       },
@@ -152,6 +180,11 @@ ShallowWrapper {
               component={[Function]}
               exact={true}
               path="/randomizer"
+            />,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/favorites"
             />,
           ],
           "className": "route-container",
@@ -191,6 +224,19 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/randomizer",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/favorites",
             },
             "ref": null,
             "rendered": null,
