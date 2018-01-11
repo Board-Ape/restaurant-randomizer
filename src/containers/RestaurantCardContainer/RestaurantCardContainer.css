@@ -40,7 +40,13 @@
 .favorite {
   height: 10px;
   width: 10px;
-  background-color: blue; }
+  padding: 8px;
+  border-radius: 25px;
+  border: 3px black solid; }
+
+.favorite:hover {
+  border: 5px #C10101 solid;
+  cursor: pointer; }
 
 .selected {
-  background-color: black; }
+  border: 3px #C10101 solid; }
