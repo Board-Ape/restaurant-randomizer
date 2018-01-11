@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './RestaurantCard.css';
+import './RestaurantCardContainer.css';
 import PropTypes from 'prop-types';
 import { addFavorite, deleteFavorite } from '../../actions';
 import { connect } from 'react-redux';
 
-export class RestaurantCard extends Component {
+export class RestaurantCardContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,7 +60,7 @@ export const mapDispatchToProps = (dispatch) => {
   };
 };
 
-RestaurantCard.propTypes = {
+RestaurantCardContainer.propTypes = {
   restaurants: PropTypes.object,
   name: PropTypes.string,
   data: PropTypes.object,
@@ -72,4 +72,4 @@ RestaurantCard.propTypes = {
   deleteFavorite: PropTypes.func
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantCard);
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantCardContainer);

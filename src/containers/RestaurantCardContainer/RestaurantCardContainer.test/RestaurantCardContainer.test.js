@@ -1,5 +1,5 @@
 import React from 'react';
-import { RestaurantCard, mapStateToProps, mapDispatchToProps} from '../RestaurantCard';
+import { RestaurantCardContainer, mapStateToProps, mapDispatchToProps} from '../RestaurantCardContainer';
 import { shallow } from 'enzyme';
 
 const mockData = {
@@ -11,12 +11,12 @@ const mockData = {
   }
 };
 
-describe('RestaurantCard', () => {
+describe('RestaurantCardContainer', () => {
   let renderedRestaurantContainer;
 
   beforeEach(() => {
     renderedRestaurantContainer = shallow(
-      <RestaurantCard
+      <RestaurantCardContainer
         restaurants={mockData}
       />
     );

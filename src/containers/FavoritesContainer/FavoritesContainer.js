@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
+import RestaurantCardContainer from '../RestaurantCardContainer/RestaurantCardContainer';
 import PropTypes from 'prop-types';
 
 export const FavoritesContainer = (props) => {
   const favoriteCards = props.favorites.map((restaurants, index) => {
-    return <RestaurantCard
+    return <RestaurantCardContainer
       key={index}
       restaurants={restaurants}
     />;

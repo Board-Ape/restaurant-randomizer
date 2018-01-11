@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getRestaurants, postLocation } from '../../actions';
-import RestaurantCard from '../../components/RestaurantCard/RestaurantCard';
+import RestaurantCardContainer from '../RestaurantCardContainer/RestaurantCardContainer';
 import { connect } from 'react-redux';
 import './RestaurantContainer.css';
 import PropTypes from 'prop-types';
@@ -15,11 +15,11 @@ export class RestaurantContainer extends Component {
     this.props.storeLocation(currentLocation);
   }
 
-  renderRestaurantCard = () => {
+  renderRestaurantCardContainer = () => {
     const restaurantsArray = shuffle(this.props.restaurantNames);
     const restaurantsCardsArray = restaurantsArray.splice(0, 3).map((restaurants, index) => {
       return (
-        <RestaurantCard
+        <RestaurantCardContainer
           key={index}
           restaurants={restaurants}
         />
@@ -44,7 +44,7 @@ export class RestaurantContainer extends Component {
           <div className='location-title'>Latitude: <span>{this.latitude()}</span></div>
           <div className='location-title'>Longitude: <span>{this.longitude()}</span></div>
         </div>
-        <div>{this.renderRestaurantCard()}</div>
+        <div>{this.renderRestaurantCardContainer()}</div>
       </div>
     );
   }
